@@ -1,19 +1,7 @@
 import { motion } from "motion/react";
-import {
-  Code,
-  Database,
-  Server,
-  Search,
-  Layers,
-} from "lucide-react";
-
 import Profile from '../assets/profile.jpg'
 
-type Skill = {
-  name: string;
-  icon: React.ElementType;
-  color: string;
-};
+
 
 const AboutSection = () => {
   return (
