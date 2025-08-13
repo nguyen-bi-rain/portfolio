@@ -16,14 +16,6 @@ type Skill = {
 };
 
 const AboutSection = () => {
-  const skills: Skill[] = [
-    { name: "C#", icon: Code, color: "#FF1493" },
-    { name: "ASP.NET", icon: Server, color: "#00BFFF" },
-    { name: "SQL Server", icon: Database, color: "#FF1493" },
-    { name: "Redis", icon: Layers, color: "#00BFFF" },
-    { name: "Elasticsearch", icon: Search, color: "#FF1493" },
-  ];
-
   return (
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">

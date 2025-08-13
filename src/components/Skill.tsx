@@ -130,7 +130,7 @@ const Skill = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    {skillCategories.map((category, categoryIndex) => (
+                    {skillCategories.map((category) => (
                         <motion.div
                             key={category.title}
                             className="bg-[#1A1A1A]/80 backdrop-blur-xl rounded-2xl p-8 border border-[#333333]/50 hover:border-[#00D4FF]/30 transition-all duration-300 group"
