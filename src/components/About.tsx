@@ -46,11 +46,6 @@ const AboutSection = () => {
           and MySQL. I'm proficient in ASP.NET Core for backend development and have hands-on 
           experience with React.js for frontend integration.
         </p>
-        <p className="text-[#E0E0E0] text-lg leading-relaxed mb-6 font-roboto">
-          I'm actively seeking a fresher or internship role where I can apply my technical 
-          skills to real-world projects while continuing to grow as a developer. My passion 
-          for backend development drives me to build efficient, scalable solutions.
-        </p>
         <p className="text-[#E0E0E0] text-lg leading-relaxed font-roboto">
           My long-term career goal is to evolve into a full-stack developer and eventually 
           advance to a senior developer or team leader position, contributing to innovative 
