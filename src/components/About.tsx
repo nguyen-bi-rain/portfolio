@@ -41,16 +41,20 @@ const AboutSection = () => {
         transition={{ duration: 0.6 }}
         >
         <p className="text-[#E0E0E0] text-lg leading-relaxed mb-6 font-roboto">
-          With over 5 years of experience in backend development, I
-          specialize in building high-performance, scalable applications
-          using the Microsoft technology stack. My passion lies in
-          architecting robust systems that can handle millions of requests
-          while maintaining clean, maintainable code.
+          I am a recent IT graduate from the University of Transport and Communications 
+          with practical experience in C#, Python, JavaScript, and databases like SQL Server 
+          and MySQL. I'm proficient in ASP.NET Core for backend development and have hands-on 
+          experience with React.js for frontend integration.
+        </p>
+        <p className="text-[#E0E0E0] text-lg leading-relaxed mb-6 font-roboto">
+          I'm actively seeking a fresher or internship role where I can apply my technical 
+          skills to real-world projects while continuing to grow as a developer. My passion 
+          for backend development drives me to build efficient, scalable solutions.
         </p>
         <p className="text-[#E0E0E0] text-lg leading-relaxed font-roboto">
-          I've worked with startups and enterprise companies, delivering
-          solutions that drive business growth through efficient data
-          processing, caching strategies, and search optimization.
+          My long-term career goal is to evolve into a full-stack developer and eventually 
+          advance to a senior developer or team leader position, contributing to innovative 
+          projects that make a meaningful impact.
         </p>
         </motion.div>
       </div>

@@ -104,7 +104,7 @@ const Skill = () => {
     };
 
     return (
-        <section className="py-20 px-6 bg-gradient-to-br from-[#0A0A0A] via-[#1A1A1A] to-[#0A0A0A]">
+        <section className="py-20 px-6 ">
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <motion.div
@@ -112,7 +112,6 @@ const Skill = () => {
                     initial={{ opacity: 0, y: -30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    viewport={{ once: true }}
                 >
                     <h2 className="text-5xl font-bold text-white mb-6 font-roboto">
                         Technical <span className="bg-gradient-to-r from-[#00D4FF] to-[#0099CC] bg-clip-text text-transparent">Skills</span>
@@ -128,7 +127,6 @@ const Skill = () => {
                     variants={containerVariants}
                     initial="hidden"
                     whileInView="visible"
-                    viewport={{ once: true }}
                 >
                     {skillCategories.map((category) => (
                         <motion.div
@@ -173,7 +171,6 @@ const Skill = () => {
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
-                    viewport={{ once: true }}
                 >
                     <div className="bg-gradient-to-r from-[#00D4FF]/10 to-[#0099CC]/10 rounded-2xl p-8 border border-[#00D4FF]/20">
                         <h3 className="text-2xl font-bold text-white mb-4 font-roboto">
