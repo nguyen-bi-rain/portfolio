@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Trang Chủ",
+    "about": "Giới Thiệu",
+    "skills": "Kỹ Năng",
+    "projects": "Dự Án",
+    "experience": "Kinh Nghiệm",
+    "contact": "Liên Hệ"
+  },
+  "hero": {
+    "title1": "Kỹ Sư",
+    "title2": "Phần Mềm",
+    "title3": "Backend",
+    "description": "Chuyên về",
+    "description2": "C#",
+    "description3": "và",
+    "description4": "ASP.NET Core",
+    "description5": "với chuyên môn về RESTful APIs, Entity Framework và SQL Server. Có kinh nghiệm với React.js cho các giải pháp full-stack, Docker containerization và triển khai đám mây trên GCP và AWS.",
+    "viewWork": "Xem Công Việc",
+    "getInTouch": "Liên Hệ"
+  },
+  "about": {
+    "title1": "Giới Thiệu",
+    "title2": "Bản Thân",
+    "paragraph1": "Tôi là một sinh viên tốt nghiệp ngành CNTT từ Đại học Giao thông Vận tải với kinh nghiệm thực tế về C#, Python, JavaScript và các cơ sở dữ liệu như SQL Server và MySQL. Tôi thành thạo ASP.NET Core cho phát triển backend và có kinh nghiệm thực hành với React.js cho tích hợp frontend.",
+    "paragraph2": "Mục tiêu nghề nghiệp dài hạn của tôi là phát triển thành một nhà phát triển full-stack và cuối cùng thăng tiến lên vị trí nhà phát triển cấp cao hoặc trưởng nhóm, đóng góp vào các dự án sáng tạo tạo ra tác động có ý nghĩa."
+  },
+  "skills": {
+    "title1": "Kỹ Năng",
+    "title2": "Kỹ Thuật",
+    "description": "Chuyên môn toàn diện về phát triển backend, công nghệ đám mây và các mẫu kiến trúc phần mềm hiện đại.",
+    "categories": {
+      "programmingLanguages": "Ngôn Ngữ Lập Trình",
+      "frameworksLibraries": "Framework & Thư Viện",
+      "cloudDevOps": "Cloud & DevOps",
+      "databases": "Cơ Sở Dữ Liệu",
+      "toolsTechnologies": "Công Cụ & Công Nghệ",
+      "architecturePatterns": "Kiến Trúc & Mẫu Thiết Kế"
+    },
+    "continuousLearning": {
+      "title": "Học Tập Liên Tục",
+      "description": "Luôn cập nhật các công nghệ mới nhất và các phương pháp tốt nhất trong phát triển phần mềm. Hiện đang khám phá tích hợp AI/ML và kiến trúc cloud-native nâng cao."
+    }
+  },
+  "projects": {
+    "title1": "Dự Án",
+    "title2": "Nổi Bật",
+    "handcraftShop": {
+      "title": "HandCraft Shop E-commerce",
+      "description": "Ứng dụng web thương mại điện tử với các vai trò khách, khách hàng và quản trị viên. Các tính năng bao gồm bảo mật JWT token, Redis caching, lọc sản phẩm theo tên và khoảng giá, phân trang và quản lý tài khoản (mật khẩu, hình ảnh). Quản lý đơn hàng và CRUD cửa hàng quản trị viên cho sản phẩm, tài khoản và đơn hàng."
+    },
+    "bookingHotel": {
+      "title": "Đặt Phòng Khách Sạn",
+      "description": "Nền tảng đặt phòng khách sạn full-stack với đề xuất tìm kiếm được cá nhân hóa, quản lý hồ sơ người dùng, bảng điều khiển chủ khách sạn và kiểm soát quản trị toàn diện để giám sát nền tảng"
+    }
+  },
+  "experience": {
+    "title1": "Kinh Nghiệm",
+    "title2": "Làm Việc",
+    "internSoftwareEngineer": {
+      "title": "Thực Tập Sinh Kỹ Sư Phần Mềm",
+      "company": "NashTech Việt Nam",
+      "period": "03/2025 - 06/2025",
+      "location": "Hà Nội, Việt Nam",
+      "description": "Tham gia chương trình đào tạo .NET/React.js có cấu trúc. Đóng góp với vai trò nhà phát triển full-stack trong nhóm 6 thành viên, thực hiện 30% sản phẩm dự án bằng ASP.NET Core và React.js. Áp dụng phương pháp Agile Scrum và có kinh nghiệm với Git, CI/CD và triển khai đám mây."
+    },
+    "softwareEngineer": {
+      "title": "Kỹ Sư Phần Mềm",
+      "company": "Viettel High Tech (VHT)",
+      "period": "2025 - Hiện tại",
+      "location": "Hà Nội, Việt Nam",
+      "description": "Tham gia phát triển phần mềm tại Viettel High Tech, đảm nhận vai trò kỹ sư phần mềm. Tham gia các dự án sử dụng ASP.NET, Node.js và Golang, đồng thời áp dụng các công nghệ như React.js và Git để nâng cao hiệu quả phát triển và quản lý mã nguồn."
+    }
+  },
+  "contact": {
+    "title1": "Liên Hệ",
+    "title2": "Ngay",
+    "heading": "Hãy Cùng Xây Dựng Điều Gì Đó Tuyệt Vời",
+    "description": "Tôi luôn quan tâm đến việc thảo luận về các cơ hội mới, dự án thách thức hoặc chỉ trò chuyện về công nghệ.",
+    "form": {
+      "name": "Tên của bạn",
+      "email": "Email của bạn",
+      "message": "Tin nhắn của bạn",
+      "submit": "Gửi Tin Nhắn"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Copyright by Nguyen."
+  }
+}

@@ -1,9 +1,11 @@
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Skill = () => {
+    const { t } = useTranslation();
     const skillCategories = [
         {
-            title: "Programming Languages",
+            title: t('skills.categories.programmingLanguages'),
             icon: "💻",
             skills: [
                 { name: "C#", color: "from-[#239120] to-[#68217A]" },
@@ -14,7 +16,7 @@ const Skill = () => {
             ]
         },
         {
-            title: "Frameworks & Libraries",
+            title: t('skills.categories.frameworksLibraries'),
             icon: "⚡",
             skills: [
                 { name: ".NET Core", color: "from-[#512BD4] to-[#7B68EE]" },
@@ -26,7 +28,7 @@ const Skill = () => {
             ]
         },
         {
-            title: "Cloud & DevOps",
+            title: t('skills.categories.cloudDevOps'),
             icon: "☁️",
             skills: [
                 { name: "Azure", color: "from-[#0078D4] to-[#00BCF2]" },
@@ -35,7 +37,7 @@ const Skill = () => {
             ]
         },
         {
-            title: "Databases",
+            title: t('skills.categories.databases'),
             icon: "🗄️",
             skills: [
                 { name: "SQL Server", color: "from-[#CC2927] to-[#A91E22]" },
@@ -46,7 +48,7 @@ const Skill = () => {
             ]
         },
         {
-            title: "Tools & Technologies",
+            title: t('skills.categories.toolsTechnologies'),
             icon: "🛠️",
             skills: [
                 { name: "Visual Studio", color: "from-[#5C2D91] to-[#7B68EE]" },
@@ -58,7 +60,7 @@ const Skill = () => {
             ]
         },
         {
-            title: "Architecture & Patterns",
+            title: t('skills.categories.architecturePatterns'),
             icon: "🏗️",
             skills: [
                 { name: "Clean Architecture", color: "from-[#68217A] to-[#9A4993]" },
@@ -113,11 +115,11 @@ const Skill = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                 >
-                    <h2 className="text-5xl font-bold text-white mb-6 font-roboto">
-                        Technical <span className="bg-gradient-to-r from-[#00D4FF] to-[#0099CC] bg-clip-text text-transparent">Skills</span>
+                    <h2 className="text-5xl font-bold text-[#1A1A1A] mb-6 font-roboto">
+                        {t('skills.title1')} <span className="text-[#93BFC7]">{t('skills.title2')}</span>
                     </h2>
-                    <p className="text-[#B0B0B0] text-lg max-w-3xl mx-auto font-roboto leading-relaxed">
-                        Comprehensive expertise in backend development, cloud technologies, and modern software architecture patterns.
+                    <p className="text-[#4A4A4A] text-lg max-w-3xl mx-auto font-roboto leading-relaxed">
+                        {t('skills.description')}
                     </p>
                 </motion.div>
 
@@ -131,14 +133,14 @@ const Skill = () => {
                     {skillCategories.map((category) => (
                         <motion.div
                             key={category.title}
-                            className="bg-[#1A1A1A]/80 backdrop-blur-xl rounded-2xl p-8 border border-[#333333]/50 hover:border-[#00D4FF]/30 transition-all duration-300 group"
+                            className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 border border-[#93BFC7]/30 hover:border-[#93BFC7]/50 hover:shadow-lg transition-all duration-300 group"
                             variants={categoryVariants as any}
                             whileHover={{ scale: 1.02, y: -5 }}
                         >
                             {/* Category Header */}
                             <div className="flex items-center mb-8">
                                 <span className="text-3xl mr-4">{category.icon}</span>
-                                <h3 className="text-2xl font-bold text-white font-roboto group-hover:text-[#00D4FF] transition-colors duration-300">
+                                <h3 className="text-2xl font-bold text-[#1A1A1A] font-roboto group-hover:text-[#93BFC7] transition-colors duration-300">
                                     {category.title}
                                 </h3>
                             </div>
@@ -153,8 +155,8 @@ const Skill = () => {
                                         custom={skillIndex}
                                     >
                                         <div className="flex items-center">
-                                            <div className={`w-4 h-4 bg-gradient-to-r ${skill.color} rounded-full mr-3`}></div>
-                                            <span className="text-white font-medium font-roboto text-lg">
+                                            <div className="w-4 h-4 bg-[#93BFC7] rounded-full mr-3 shadow-sm shadow-[#93BFC7]/50"></div>
+                                            <span className="text-[#1A1A1A] font-medium font-roboto text-lg">
                                                 {skill.name}
                                             </span>
                                         </div>
@@ -172,13 +174,12 @@ const Skill = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.4 }}
                 >
-                    <div className="bg-gradient-to-r from-[#00D4FF]/10 to-[#0099CC]/10 rounded-2xl p-8 border border-[#00D4FF]/20">
-                        <h3 className="text-2xl font-bold text-white mb-4 font-roboto">
-                            Continuous Learning
+                    <div className="bg-[#93BFC7]/10 rounded-2xl p-8 border border-[#93BFC7]/30">
+                        <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4 font-roboto">
+                            {t('skills.continuousLearning.title')}
                         </h3>
-                        <p className="text-[#B0B0B0] font-roboto leading-relaxed max-w-2xl mx-auto">
-                            Always staying updated with the latest technologies and best practices in software development. 
-                            Currently exploring AI/ML integration and advanced cloud-native architectures.
+                        <p className="text-[#4A4A4A] font-roboto leading-relaxed max-w-2xl mx-auto">
+                            {t('skills.continuousLearning.description')}
                         </p>
                     </div>
                 </motion.div>

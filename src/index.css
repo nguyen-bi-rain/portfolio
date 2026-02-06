@@ -8,7 +8,7 @@
 
 body {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0a0a0a;
+  background: #ECF4E8;
   overflow-x: hidden;
 } 
 
@@ -32,16 +32,16 @@ pre {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a0a26;
+  background: #CBF3BB;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ff1493, #00bfff);
+  background: #93BFC7;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #ff1493, #00bfff);
+  background: #ABE7B2;
 }
 
 /* Smooth scrolling */
@@ -51,19 +51,19 @@ html {
 
 /* Selection color */
 ::selection {
-  background: #ff1493;
+  background: #93BFC7;
   color: white;
 }
 
 ::-moz-selection {
-  background: #ff1493;
+  background: #93BFC7;
   color: white;
 }
 
 /* Custom utility classes */
 @layer utilities {
   .text-gradient {
-    background: linear-gradient(45deg, #ff1493, #00bfff);
+    background: linear-gradient(45deg, #93BFC7, #ABE7B2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -71,14 +71,14 @@ html {
 
   .border-gradient {
     border: 2px solid transparent;
-    background: linear-gradient(#1a0a26, #1a0a26) padding-box, linear-gradient(45deg, #ff1493, #00bfff) border-box;
+    background: linear-gradient(#ECF4E8, #ECF4E8) padding-box, linear-gradient(45deg, #93BFC7, #ABE7B2) border-box;
   }
 
-  .glow-pink {
-    box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+  .glow-teal {
+    box-shadow: 0 0 20px rgba(147, 191, 199, 0.5);
   }
 
-  .glow-blue {
-    box-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+  .glow-mint {
+    box-shadow: 0 0 20px rgba(171, 231, 178, 0.5);
   }
 }

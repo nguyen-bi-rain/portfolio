@@ -1,6 +1,8 @@
 import { motion } from "motion/react";
+import { useTranslation } from 'react-i18next';
 
 const HeroSection = () => {
+  const { t } = useTranslation();
   return (
     <section className="min-h-screen flex items-center justify-center relative px-6">
       <div className="text-center max-w-4xl mx-auto">
@@ -10,22 +12,19 @@ const HeroSection = () => {
           transition={{ duration: 0.8 }}
           className="text-5xl md:text-7xl font-bold mb-6 font-poppins"
         >
-          <span className="text-white">Backend</span>{" "}
-          <span className="text-[#FF1493]">Software</span>{" "}
-          <span className="text-[#00BFFF]">Engineer</span>
+          <span className="text-[#1A1A1A]">{t('hero.title1')}</span>{" "}
+          <span className="text-[#ABE7B2]">{t('hero.title2')}</span>{" "}
+          <span className="text-[#93BFC7]">{t('hero.title3')}</span>
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="text-xl md:text-2xl text-[#E0E0E0] mb-8 font-roboto"
+          className="text-xl md:text-2xl text-[#4A4A4A] mb-8 font-roboto"
         >
-          Specializing in <span className="text-[#FF1493]">C#</span> and{" "}
-          <span className="text-[#00BFFF]">ASP.NET Core</span> development with expertise in 
-          RESTful APIs, Entity Framework, and SQL Server. 
-          Experienced in React.js for full-stack solutions, Docker containerization, 
-          and cloud deployment on GCP and AWS.
+          {t('hero.description')} <span className="text-[#ABE7B2]">{t('hero.description2')}</span> {t('hero.description3')}{" "}
+          <span className="text-[#93BFC7]">{t('hero.description4')}</span> {t('hero.description5')}
         </motion.p>
 
         <motion.div
@@ -36,19 +35,19 @@ const HeroSection = () => {
         >
           <motion.a
             href="#projects"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #FF1493" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #93BFC7" }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 bg-[#FF1493] text-white font-semibold rounded-lg hover:bg-[#FF1493]/90 transition-all duration-300"
+            className="px-8 py-4 bg-[#93BFC7] text-[#0A0A0A] font-semibold rounded-lg hover:bg-[#ABE7B2] transition-all duration-300"
           >
-            View My Work
+            {t('hero.viewWork')}
           </motion.a>
           <motion.a
             href="#contact"
-            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #00BFFF" }}
+            whileHover={{ scale: 1.05, boxShadow: "0 0 25px #ABE7B2" }}
             whileTap={{ scale: 0.95 }}
-            className="px-8 py-4 border-2 border-[#00BFFF] text-[#00BFFF] font-semibold rounded-lg hover:bg-[#00BFFF] hover:text-white transition-all duration-300"
+            className="px-8 py-4 border-2 border-[#ABE7B2] text-[#ABE7B2] font-semibold rounded-lg hover:bg-[#ABE7B2] hover:text-[#0A0A0A] transition-all duration-300"
           >
-            Get In Touch
+            {t('hero.getInTouch')}
           </motion.a>
         </motion.div>
       </div>

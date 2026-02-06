@@ -1,0 +1,90 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title1": "Backend",
+    "title2": "Software",
+    "title3": "Engineer",
+    "description": "Specializing in",
+    "description2": "C#",
+    "description3": "and",
+    "description4": "ASP.NET Core",
+    "description5": "development with expertise in RESTful APIs, Entity Framework, and SQL Server. Experienced in React.js for full-stack solutions, Docker containerization, and cloud deployment on GCP and AWS.",
+    "viewWork": "View My Work",
+    "getInTouch": "Get In Touch"
+  },
+  "about": {
+    "title1": "About",
+    "title2": "Me",
+    "paragraph1": "I am a recent IT graduate from the University of Transport and Communications with practical experience in C#, Python, JavaScript, and databases like SQL Server and MySQL. I'm proficient in ASP.NET Core for backend development and have hands-on experience with React.js for frontend integration.",
+    "paragraph2": "My long-term career goal is to evolve into a full-stack developer and eventually advance to a senior developer or team leader position, contributing to innovative projects that make a meaningful impact."
+  },
+  "skills": {
+    "title1": "Technical",
+    "title2": "Skills",
+    "description": "Comprehensive expertise in backend development, cloud technologies, and modern software architecture patterns.",
+    "categories": {
+      "programmingLanguages": "Programming Languages",
+      "frameworksLibraries": "Frameworks & Libraries",
+      "cloudDevOps": "Cloud & DevOps",
+      "databases": "Databases",
+      "toolsTechnologies": "Tools & Technologies",
+      "architecturePatterns": "Architecture & Patterns"
+    },
+    "continuousLearning": {
+      "title": "Continuous Learning",
+      "description": "Always staying updated with the latest technologies and best practices in software development. Currently exploring AI/ML integration and advanced cloud-native architectures."
+    }
+  },
+  "projects": {
+    "title1": "Featured",
+    "title2": "Projects",
+    "handcraftShop": {
+      "title": "HandCraft Shop E-commerce",
+      "description": "An e-commerce web application with roles for guest, customer, and admin. Features include JWT token security, Redis caching, product filtering by name and price range, pagination, and account management (password, image). Manage orders and administrator shop CRUD for products, accounts, and orders."
+    },
+    "bookingHotel": {
+      "title": "Booking Hotel",
+      "description": "Full-stack hotel booking platform with personalized search recommendations, user profile management, hotel owner dashboard, and comprehensive admin controls for platform oversight"
+    }
+  },
+  "experience": {
+    "title1": "Work",
+    "title2": "Experience",
+    "internSoftwareEngineer": {
+      "title": "Intern Software Engineer",
+      "company": "NashTech VietNam",
+      "period": "03/2025 - 06/2025",
+      "location": "Hanoi, Vietnam",
+      "description": "Participated in structured .NET/React.js training program. Contributed as full-stack developer in 6-member team, implementing 30% of project deliverables using ASP.NET Core and React.js. Applied Agile Scrum methodology and gained experience with Git, CI/CD, and cloud deployment."
+    },
+    "softwareEngineer": {
+      "title": "Software Engineer",
+      "company": "Viettel High Tech (VHT)",
+      "period": "2025 - Present",
+      "location": "Hanoi, Vietnam",
+      "description": "Participating in software development at Viettel High Tech, serving as a software engineer. Involved in projects using ASP.NET, Node.js, and Golang, while applying technologies such as React.js and Git to enhance development efficiency and source code management."
+    }
+  },
+  "contact": {
+    "title1": "Get In",
+    "title2": "Touch",
+    "heading": "Let's Build Something Amazing Together",
+    "description": "I'm always interested in discussing new opportunities, challenging projects, or just having a chat about technology.",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "message": "Your Message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "copyright": "© 2024 Copyright by Nguyen."
+  }
+}

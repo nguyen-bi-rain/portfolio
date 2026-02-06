@@ -1,18 +1,25 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const NavBar = () => {
+  const { t, i18n } = useTranslation();
   const [activeSection, setActiveSection] = useState('hero');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
-    { id: 'hero', label: 'Home' },
-    { id: 'about', label: 'About' },
-    {id: 'skills', label: 'Skills' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'experience', label: 'Experience' },
-    { id: 'contact', label: 'Contact' },
+    { id: 'hero', label: t('nav.home') },
+    { id: 'about', label: t('nav.about') },
+    {id: 'skills', label: t('nav.skills') },
+    { id: 'projects', label: t('nav.projects') },
+    { id: 'experience', label: t('nav.experience') },
+    { id: 'contact', label: t('nav.contact') },
   ];
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === 'en' ? 'vi' : 'en';
+    i18n.changeLanguage(newLang);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -51,7 +58,7 @@ const NavBar = () => {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
         isScrolled
-          ? 'bg-gradient-to-br from-[#1A0A26] via-[#0A0A0A] to-[#1A0A26] shadow-2xl'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-[#93BFC7]/20'
           : 'bg-transparent'
       }`}
     >
@@ -59,39 +66,47 @@ const NavBar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div
-            className="text-2xl font-bold text-white cursor-pointer hover:text-[#00D4FF] transition-colors duration-300 font-roboto tracking-tight"
+            className="text-2xl font-bold text-[#1A1A1A] cursor-pointer hover:text-[#93BFC7] transition-colors duration-300 font-roboto tracking-tight"
             onClick={() => scrollToSection('hero')}
           >
-            <span className="bg-gradient-to-r from-white via-[#00D4FF] to-[#0099CC] bg-clip-text text-transparent">
+            <span className="text-[#1A1A1A]">
               Vũ Thế Nguyên
             </span>
           </div>
 
           {/* Navigation Links */}
           <div className="hidden lg:flex items-center space-x-10">
+            
             {navItems.map((item) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`relative cursor-pointer px-4 py-2 text-sm font-medium transition-all duration-300 font-roboto tracking-wide group ${
                   activeSection === item.id
-                    ? 'text-white'
-                    : 'text-[#B0B0B0] hover:text-white'
+                    ? 'text-[#93BFC7]'
+                    : 'text-[#4A4A4A] hover:text-[#93BFC7]'
                 }`}
               >
                 {item.label}
                 
                 {/* Active indicator */}
                 <span 
-                  className={`absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-[#00D4FF] to-[#0099CC] transition-all duration-300 ${
+                  className={`absolute bottom-0 left-0 h-0.5 bg-[#93BFC7] transition-all duration-300 ${
                     activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
                   }`}
                 />
                 
                 {/* Hover background effect */}
-                <span className="absolute inset-0 bg-gradient-to-r from-[#00D4FF]/10 to-[#0099CC]/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10" />
+                <span className="absolute inset-0 bg-[#ABE7B2]/10 rounded-lg scale-0 group-hover:scale-100 transition-transform duration-300 -z-10" />
               </button>
             ))}
+            {/* Language Toggle */}
+            <button
+              onClick={toggleLanguage}
+              className="px-4 py-2 text-sm font-medium text-[#0A0A0A] bg-[#93BFC7] rounded-lg hover:bg-[#ABE7B2] transition-all duration-300"
+            >
+              {i18n.language === 'en' ? 'VI' : 'EN'}
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -129,18 +144,18 @@ const NavBar = () => {
         {/* Mobile Menu */}
         <div
           className={`lg:hidden transition-all duration-300 ease-in-out overflow-hidden ${
-            isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            isMobileMenuOpen ? 'max-h-full opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="px-4 pt-4 pb-6 space-y-3 bg-[#1A1A1A]/98 backdrop-blur-xl rounded-2xl mt-4 border border-[#333333]/30 shadow-2xl">
+          <div className="px-4 pt-4 pb-6 space-y-3 bg-white/98 backdrop-blur-xl rounded-2xl mt-4 border border-[#93BFC7]/30 shadow-2xl">
             {navItems.map((item, index) => (
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
                 className={`block cursor-pointer w-full text-left px-6 py-4 text-base font-medium transition-all duration-300 rounded-xl font-roboto group ${
                   activeSection === item.id
-                    ? 'text-white bg-gradient-to-r from-[#00D4FF]/20 to-[#0099CC]/20 border-l-4 border-[#00D4FF]'
-                    : 'text-[#B0B0B0] hover:text-white hover:bg-[#333333]/30'
+                    ? 'text-[#93BFC7] bg-[#93BFC7]/10 border-l-4 border-[#93BFC7]'
+                    : 'text-[#4A4A4A] hover:text-[#93BFC7] hover:bg-[#ECF4E8]'
                 }`}
                 style={{
                   animationDelay: `${index * 100}ms`,
@@ -150,7 +165,7 @@ const NavBar = () => {
                 <span className="flex items-center">
                   {item.label}
                   {activeSection === item.id && (
-                    <span className="ml-auto w-2 h-2 bg-[#00D4FF] rounded-full animate-pulse" />
+                    <span className="ml-auto w-2 h-2 bg-[#93BFC7] rounded-full animate-pulse" />
                   )}
                 </span>
               </button>

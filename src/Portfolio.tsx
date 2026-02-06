@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import AboutSection from "./components/About";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ContactSection from "./components/Contact";
@@ -8,8 +9,9 @@ import ProjectsSection from "./components/Projects";
 import Skill from "./components/Skill";
 
 const Portfolio = () => {
+  const { t } = useTranslation();
   return (
-    <div className="relative min-h-screen text-white overflow-x-hidden">
+    <div className="relative min-h-screen text-[#1A1A1A] overflow-x-hidden">
       <AnimatedBackground />
       <NavBar />
 
@@ -37,9 +39,9 @@ const Portfolio = () => {
         </section>
 
         {/* Footer */}
-        <footer className="py-8 text-center border-t border-white/10">
-          <p className="text-[#E0E0E0] font-roboto">
-            © 2024 Backend Engineer Portfolio. Built with React & Tailwind CSS.
+        <footer className="py-8 text-center border-t border-[#93BFC7]/20">
+          <p className="text-[#4A4A4A] font-roboto">
+            {t('footer.copyright')}
           </p>
         </footer>
       </div>

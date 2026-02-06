@@ -1,5 +1,6 @@
 import { Calendar, MapPin } from "lucide-react";
 import { motion } from "motion/react";
+import { useTranslation } from 'react-i18next';
 
 type Experience = {
   title: string;
@@ -11,34 +12,24 @@ type Experience = {
 };
 
 const ExperienceSection = () => {
+  const { t } = useTranslation();
   const experiences: Experience[] = [
     {
-      title: "Intern Software Engineer",
-      company: "NashTech VietNam",
-      period: "03 - 2025 -> 06 - 2025",
-      location: "Hanoi, Vietnam",
-      description:
-        "Participated in structured .NET/React.js training program. Contributed as full-stack developer in 6-member team, implementing 30% of project deliverables using ASP.NET Core and React.js. Applied Agile Scrum methodology and gained experience with Git, CI/CD, and cloud deployment.",
-      tech: ["ASP.NET Core", "SQL Server", "Reactjs", "Azure"],
+      title: t('experience.internSoftwareEngineer.title'),
+      company: t('experience.internSoftwareEngineer.company'),
+      period: t('experience.internSoftwareEngineer.period'),
+      location: t('experience.internSoftwareEngineer.location'),
+      description: t('experience.internSoftwareEngineer.description'),
+      tech: ["ASP.NET Core", "SQL Server", "React.js", "Azure"],
     },
-    // {
-    //   title: "Backend Developer",
-    //   company: "DataFlow Systems",
-    //   period: "2020 - 2022",
-    //   location: "San Francisco, CA",
-    //   description:
-    //     "Built real-time data processing pipelines and RESTful APIs. Optimized database queries improving performance by 40%.",
-    //   tech: ["C#", "Elasticsearch", "SQL Server", "Azure"],
-    // },
-    // {
-    //   title: "Software Developer",
-    //   company: "StartupXYZ",
-    //   period: "2019 - 2020",
-    //   location: "New York, NY",
-    //   description:
-    //     "Developed MVP backend systems and integrated third-party APIs. Established CI/CD pipelines and testing frameworks.",
-    //   tech: ["ASP.NET", "SQL Server", "Redis", "Git"],
-    // },
+    {
+      title: t('experience.softwareEngineer.title'),
+      company: t('experience.softwareEngineer.company'),
+      period: t('experience.softwareEngineer.period'),
+      location: t('experience.softwareEngineer.location'),
+      description: t('experience.softwareEngineer.description'),
+      tech: ["ASP.NET", "SQL Server", "Node.js", "Git"],
+    },
   ];
 
   return (
@@ -50,13 +41,13 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-center mb-16 font-poppins"
         >
-          <span className="text-white">Work</span>{" "}
-          <span className="text-[#FF1493]">Experience</span>
+          <span className="text-[#1A1A1A]">{t('experience.title1')}</span>{" "}
+          <span className="text-[#93BFC7]">{t('experience.title2')}</span>
         </motion.h2>
 
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#FF1493] to-[#00BFFF]"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[#93BFC7]"></div>
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -64,23 +55,23 @@ const ExperienceSection = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ boxShadow: "0 10px 30px rgba(0, 191, 255, 0.3)" }}
+              whileHover={{ boxShadow: "0 10px 30px rgba(147, 191, 199, 0.3)" }}
               className="relative pl-20 pb-12"
             >
               {/* Timeline Marker */}
-              <div className="absolute left-6 top-6 w-4 h-4 bg-[#00BFFF] rounded-full border-4 border-[#0A0A0A] shadow-lg shadow-[#00BFFF]/50"></div>
+              <div className="absolute left-6 top-6 w-4 h-4 bg-[#93BFC7] rounded-full border-4 border-[#ECF4E8] shadow-lg shadow-[#93BFC7]/50"></div>
 
-              <div className="bg-[#1A0A26]/70 p-6 rounded-lg border border-white/10">
+              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-lg border border-[#93BFC7]/30 hover:border-[#93BFC7]/50 transition-all duration-300">
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
                   <div>
-                    <h3 className="text-xl font-bold text-white font-poppins">
+                    <h3 className="text-xl font-bold text-[#1A1A1A] font-poppins">
                       {exp.title}
                     </h3>
-                    <p className="text-[#FF1493] font-semibold">
+                    <p className="text-[#ABE7B2] font-semibold">
                       {exp.company}
                     </p>
                   </div>
-                  <div className="text-[#E0E0E0] text-sm flex items-center gap-4 mt-2 md:mt-0">
+                  <div className="text-[#4A4A4A] text-sm flex items-center gap-4 mt-2 md:mt-0">
                     <span className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       {exp.period}
@@ -92,7 +83,7 @@ const ExperienceSection = () => {
                   </div>
                 </div>
 
-                <p className="text-[#E0E0E0] mb-4 font-roboto">
+                <p className="text-[#4A4A4A] mb-4 font-roboto">
                   {exp.description}
                 </p>
 
@@ -100,7 +91,7 @@ const ExperienceSection = () => {
                   {exp.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-3 py-1 bg-[#00BFFF]/20 text-[#00BFFF] text-sm rounded-full border border-[#00BFFF]/30"
+                      className="px-3 py-1 bg-[#CBF3BB]/20 text-[#CBF3BB] text-sm rounded-full border border-[#CBF3BB]/30"
                     >
                       {tech}
                     </span>

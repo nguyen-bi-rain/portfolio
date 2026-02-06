@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
+import { motion, useMotionValue, useSpring } from "motion/react";
 
 type Particle = {
   id: number;
@@ -8,8 +8,14 @@ type Particle = {
   size: number;
   duration: number;
 };
+
 const AnimatedBackground = () => {
   const [particles, setParticles] = useState<Particle[]>([]);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+  
+  const springX = useSpring(mouseX, { stiffness: 50, damping: 20 });
+  const springY = useSpring(mouseY, { stiffness: 50, damping: 20 });
 
   useEffect(() => {
     const generateParticles = () => {
@@ -28,10 +34,32 @@ const AnimatedBackground = () => {
     generateParticles();
   }, []);
 
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      mouseX.set(e.clientX);
+      mouseY.set(e.clientY);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [mouseX, mouseY]);
+
   return (
     <div className="fixed inset-0 overflow-hidden pointer-events-none">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#1A0A26] via-[#0A0A0A] to-[#1A0A26]" />
+      {/* Solid Background */}
+      <div className="absolute inset-0 bg-[#ECF4E8]" />
+
+      {/* Mouse Glow Effect */}
+      <motion.div
+        className="absolute w-96 h-96 rounded-full pointer-events-none"
+        style={{
+          background: "radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, transparent 70%)",
+          x: springX,
+          y: springY,
+          translateX: "-50%",
+          translateY: "-50%",
+        }}
+      />
 
       {/* Animated Particles */}
       {particles.map((particle) => (
