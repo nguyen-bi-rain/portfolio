@@ -1,6 +1,8 @@
-import { ExternalLink, Github } from "lucide-react";
-import {motion} from "motion/react";
+import { ExternalLink, Github, Server, Code, Terminal } from "lucide-react";
+import { motion } from "motion/react";
 import { useTranslation } from 'react-i18next';
+import Booking from '../assets/bookingapp.jpg';
+
 type Project = {
   title: string;
   description: string;
@@ -10,9 +12,10 @@ type Project = {
   backend?: string;
   live?: string;
 };
-import Booking from '../assets/bookingapp.jpg';
+
 const ProjectsSection = () => {
   const { t } = useTranslation();
+
   const projects: Project[] = [
     {
       title: t('projects.handcraftShop.title'),
@@ -20,8 +23,7 @@ const ProjectsSection = () => {
       tech: ["ASP.NET Core", "Reactjs", "SQL Server", "Redux", "Redis cache", "Entity Framework"],
       image: "https://ik.imagekit.io/tvlk/blog/2023/01/go-and-share-trai-nghiem-lam-gom-bat-trang-13.jpg",
       github: "https://github.com/nguyen-bi-rain/CraftShop_FrontEnd",
-      backend : "https://github.com/nguyen-bi-rain/CraftShop_Backend",
-      live: "#",
+      backend: "https://github.com/nguyen-bi-rain/CraftShop_Backend",
     },
     {
       title: t('projects.bookingHotel.title'),
@@ -30,100 +32,120 @@ const ProjectsSection = () => {
       image: Booking,
       github: "https://github.com/nguyen-bi-rain/DoAnTotNghiep",
     },
-    
-    // {
-    //   title: "Document Management System",
-    //   description:
-    //     "Enterprise document processing system with full-text search and automated workflows",
-    //   tech: ["ASP.NET", "Elasticsearch", "Azure Blob", "Redis"],
-    //   image: "/placeholder.svg?height=200&width=300",
-    //   github: "#",
-    //   live: "#",
-    // },
   ];
 
   return (
-    <section className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-16 font-poppins"
-        >
-          <span className="text-[#1A1A1A]">{t('projects.title1')}</span>{" "}
-          <span className="text-[#93BFC7]">{t('projects.title2')}</span>
-        </motion.h2>
+    <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 sm:pt-28 sm:pb-12 flex flex-col justify-center min-h-[calc(100vh-5rem)]">
+      {/* Section Header */}
+      <motion.div
+        className="text-center mb-6 sm:mb-8"
+        initial={{ opacity: 0, y: -20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-poppins tracking-tight">
+          <span className="text-slate-100">{t('projects.title1')}</span>{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">
+            {t('projects.title2')}
+          </span>
+        </h2>
+        <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto mt-2.5 rounded-full shadow-[0_0_10px_#00F0FF]" />
+      </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{
-                y: -10,
-                boxShadow: "0 20px 40px rgba(147, 191, 199, 0.3)",
-              }}
-              className="bg-white/80 backdrop-blur-sm rounded-lg overflow-hidden border border-[#93BFC7]/30 hover:border-[#93BFC7]/50 transition-all duration-300 p-4"
-            >
+      {/* Projects Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+        {projects.map((project, index) => (
+          <motion.div
+            key={project.title}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.15 }}
+            whileHover={{ y: -6 }}
+            className="glass-card rounded-2xl overflow-hidden border border-slate-800 hover:border-cyan-500/40 hover:shadow-[0_15px_35px_-10px_rgba(0,240,255,0.25)] transition-all duration-300 flex flex-col text-left group"
+          >
+            {/* Image Preview Container */}
+            <div className="relative h-40 sm:h-48 w-full overflow-hidden bg-slate-950">
               <img
                 src={project.image || "/placeholder.svg"}
                 alt={project.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter saturate-110"
               />
-              <div className="p-6"></div>
-              <h3 className="text-xl font-bold text-[#1A1A1A] mb-3 font-poppins">
-                {project.title}
-              </h3>
-              <p className="text-[#4A4A4A] mb-4 font-roboto">
-                {project.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-[#CBF3BB]/20 text-[#CBF3BB] text-sm rounded-full border border-[#CBF3BB]/30"
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F17] via-transparent to-transparent opacity-90" />
+              <div className="absolute top-3 right-3 px-2.5 py-0.5 rounded-full bg-slate-950/80 border border-slate-800 backdrop-blur-md text-[10px] font-mono text-cyan-400">
+                Backend System Architecture
               </div>
-              <div className="flex gap-4">
-                <motion.a
-                  href={project.github}
-                  whileHover={{ scale: 1.1 }}
-                  className="text-[#93BFC7] hover:text-[#1A1A1A] transition-colors"
-                >
-                  <Github className="w-5 h-5" />
-                </motion.a>
-                {project.backend && (
-                  <motion.a
-                    href={project.backend}
-                    whileHover={{ scale: 1.1 }}
-                    className="text-[#93BFC7] hover:text-[#1A1A1A] transition-colors"
-                  >
-                    <Github className="w-5 h-5" />
-                  </motion.a>
-                )}
+            </div>
 
-                {project.live && (
-                  <motion.a
-                    href={project.live}
-                    whileHover={{ scale: 1.1 }}
-                    className="text-[#93BFC7] hover:text-[#1A1A1A] transition-colors"
-                  >
-                    <ExternalLink className="w-5 h-5" />
-                  </motion.a>
-                )}
+            {/* Project Details */}
+            <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
+              <div>
+                <h3 className="text-lg sm:text-xl font-bold font-poppins text-slate-100 mb-1.5 group-hover:text-cyan-400 transition-colors">
+                  {project.title}
+                </h3>
+                <p className="text-slate-300 text-xs sm:text-sm font-roboto leading-relaxed line-clamp-3 sm:line-clamp-4">
+                  {project.description}
+                </p>
               </div>
-            </motion.div>
-          ))}
-        </div>
+
+              <div className="space-y-3 pt-1">
+                {/* Tech Badges */}
+                <div className="flex flex-wrap gap-1.5">
+                  {project.tech.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-2 py-0.5 sm:px-2.5 sm:py-1 bg-slate-900/90 text-cyan-300 text-[11px] font-mono rounded-md border border-slate-800"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                {/* GitHub & Live Links */}
+                <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2 border-t border-slate-800/80">
+                  <motion.a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.05 }}
+                    className="flex items-center gap-1.5 text-[11px] sm:text-xs font-mono text-slate-300 hover:text-cyan-400 transition-colors"
+                  >
+                    <Github className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-cyan-400" />
+                    <span>Frontend Repo</span>
+                  </motion.a>
+
+                  {project.backend && (
+                    <motion.a
+                      href={project.backend}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center gap-1.5 text-[11px] sm:text-xs font-mono text-slate-300 hover:text-emerald-400 transition-colors"
+                    >
+                      <Server className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-400" />
+                      <span>Backend Repo</span>
+                    </motion.a>
+                  )}
+
+                  {project.live && (
+                    <motion.a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      whileHover={{ scale: 1.05 }}
+                      className="flex items-center gap-1.5 text-[11px] sm:text-xs font-mono text-slate-300 hover:text-indigo-400 transition-colors ml-auto"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-indigo-400" />
+                      <span>Live Demo</span>
+                    </motion.a>
+                  )}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 };
 
-export default ProjectsSection;
+export default ProjectsSection;

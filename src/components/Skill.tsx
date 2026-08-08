@@ -1,71 +1,73 @@
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import { Code2, Server, Cloud, Database, Wrench, Layers } from 'lucide-react';
 
 const Skill = () => {
     const { t } = useTranslation();
+
     const skillCategories = [
         {
             title: t('skills.categories.programmingLanguages'),
-            icon: "💻",
+            icon: <Code2 className="w-5 h-5 text-purple-400" />,
             skills: [
-                { name: "C#", color: "from-[#239120] to-[#68217A]" },
-                { name: "JavaScript", color: "from-[#F7DF1E] to-[#E8B429]" },
-                { name: "TypeScript", color: "from-[#3178C6] to-[#1E5299]" },
-                { name: "Python", color: "from-[#3776AB] to-[#FFD43B]" },
-                { name: "SQL", color: "from-[#336791] to-[#1E4D5F]" },
+                { name: "C#", level: ".NET 8 / 9" },
+                { name: "JavaScript", level: "ES6+" },
+                { name: "TypeScript", level: "Strongly Typed" },
+                { name: "Python", level: "Scripting / Data" },
+                { name: "SQL", level: "Queries & Stored Procedures" },
             ]
         },
         {
             title: t('skills.categories.frameworksLibraries'),
-            icon: "⚡",
+            icon: <Server className="w-5 h-5 text-cyan-400" />,
             skills: [
-                { name: ".NET Core", color: "from-[#512BD4] to-[#7B68EE]" },
-                { name: "ASP.NET", color: "from-[#0078D4] to-[#00BCF2]" },
-                { name: "Entity Framework", color: "from-[#1BA1E2] to-[#00A1F1]" },
-                { name: "React", color: "from-[#61DAFB] to-[#21B1C7]" },
-                { name: "Node.js", color: "from-[#339933] to-[#6CC24A]" },
-                { name: "Express.js", color: "from-[#000000] to-[#404040]" }
+                { name: ".NET Core", level: "Web APIs & Microservices" },
+                { name: "ASP.NET", level: "RESTful Endpoints" },
+                { name: "Entity Framework", level: "EF Core ORM" },
+                { name: "React", level: "Hooks & SPA Integration" },
+                { name: "Node.js", level: "Express APIs" },
+                { name: "Express.js", level: "Middleware" }
             ]
         },
         {
             title: t('skills.categories.cloudDevOps'),
-            icon: "☁️",
+            icon: <Cloud className="w-5 h-5 text-emerald-400" />,
             skills: [
-                { name: "Azure", color: "from-[#0078D4] to-[#00BCF2]" },
-                { name: "AWS", color: "from-[#FF9900] to-[#FF6B35]" },
-                { name: "Docker", color: "from-[#2496ED] to-[#0DB7ED]" },
+                { name: "Azure", level: "App Services & Functions" },
+                { name: "AWS", level: "EC2 & S3 Basics" },
+                { name: "Docker", level: "Containerization" },
             ]
         },
         {
             title: t('skills.categories.databases'),
-            icon: "🗄️",
+            icon: <Database className="w-5 h-5 text-amber-400" />,
             skills: [
-                { name: "SQL Server", color: "from-[#CC2927] to-[#A91E22]" },
-                { name: "PostgreSQL", color: "from-[#336791] to-[#1E4D5F]" },
-                { name: "MongoDB", color: "from-[#47A248] to-[#3FA037]" },
-                { name: "Redis", color: "from-[#DC382D] to-[#B32821]" },
-                { name: "MySQL", color: "from-[#4479A1] to-[#00618A]" }
+                { name: "SQL Server", level: "Indexes & Schema Design" },
+                { name: "PostgreSQL", level: "Relational DB" },
+                { name: "MongoDB", level: "NoSQL Documents" },
+                { name: "Redis", level: "In-Memory Caching" },
+                { name: "MySQL", level: "Relational Queries" }
             ]
         },
         {
             title: t('skills.categories.toolsTechnologies'),
-            icon: "🛠️",
+            icon: <Wrench className="w-5 h-5 text-rose-400" />,
             skills: [
-                { name: "Visual Studio", color: "from-[#5C2D91] to-[#7B68EE]" },
-                { name: "VS Code", color: "from-[#007ACC] to-[#0078D4]" },
-                { name: "Git", color: "from-[#F05032] to-[#E8563A]" },
-                { name: "Postman", color: "from-[#FF6C37] to-[#FF4500]" },
-                { name: "Swagger", color: "from-[#85EA2D] to-[#6FCF1F]" },
-                { name: "JIRA", color: "from-[#0052CC] to-[#2684FF]" }
+                { name: "Visual Studio", level: "Primary IDE" },
+                { name: "VS Code", level: "Development Tool" },
+                { name: "Git", level: "Version Control" },
+                { name: "Postman", level: "API Testing & Docs" },
+                { name: "Swagger", level: "OpenAPI Spec" },
+                { name: "JIRA", level: "Agile Workflow" }
             ]
         },
         {
             title: t('skills.categories.architecturePatterns'),
-            icon: "🏗️",
+            icon: <Layers className="w-5 h-5 text-indigo-400" />,
             skills: [
-                { name: "Clean Architecture", color: "from-[#68217A] to-[#9A4993]" },
-                { name: "CQRS", color: "from-[#FF6B35] to-[#E8563A]" },
-                { name: "API Design", color: "from-[#0078D4] to-[#00BCF2]" }
+                { name: "Clean Architecture", level: "Onion / Layered" },
+                { name: "CQRS", level: "Command Query Separation" },
+                { name: "API Design", level: "RESTful Best Practices" }
             ]
         }
     ];
@@ -75,29 +77,17 @@ const Skill = () => {
         visible: {
             opacity: 1,
             transition: {
-                staggerChildren: 0.3,
-                delayChildren: 0.2
+                staggerChildren: 0.15,
+                delayChildren: 0.1
             }
         }
     };
 
     const categoryVariants = {
-        hidden: { opacity: 0, y: 50 },
+        hidden: { opacity: 0, y: 30 },
         visible: {
             opacity: 1,
             y: 0,
-            transition: {
-                duration: 0.6,
-                ease: [0.25, 0.46, 0.45, 0.94]
-            }
-        }
-    };
-
-    const skillVariants = {
-        hidden: { opacity: 0, x: -30 },
-        visible: {
-            opacity: 1,
-            x: 0,
             transition: {
                 duration: 0.5,
                 ease: [0.25, 0.46, 0.45, 0.94]
@@ -106,86 +96,85 @@ const Skill = () => {
     };
 
     return (
-        <section className="py-20 px-6 ">
-            <div className="max-w-7xl mx-auto">
-                {/* Header */}
-                <motion.div
-                    className="text-center mb-16"
-                    initial={{ opacity: 0, y: -30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <h2 className="text-5xl font-bold text-[#1A1A1A] mb-6 font-roboto">
-                        {t('skills.title1')} <span className="text-[#93BFC7]">{t('skills.title2')}</span>
-                    </h2>
-                    <p className="text-[#4A4A4A] text-lg max-w-3xl mx-auto font-roboto leading-relaxed">
-                        {t('skills.description')}
+        <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-8 sm:pt-28 sm:pb-12 flex flex-col justify-center min-h-[calc(100vh-5rem)]">
+            {/* Section Header */}
+            <motion.div
+                className="text-center mb-6 sm:mb-8"
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+            >
+                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-poppins tracking-tight">
+                    <span className="text-slate-100">{t('skills.title1')}</span>{" "}
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">
+                        {t('skills.title2')}
+                    </span>
+                </h2>
+                <p className="text-slate-300 text-xs sm:text-sm lg:text-base max-w-2xl mx-auto mt-2 font-roboto">
+                    {t('skills.description')}
+                </p>
+                <div className="w-16 h-1 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto mt-2.5 rounded-full shadow-[0_0_10px_#00F0FF]" />
+            </motion.div>
+
+            {/* Skills Grid */}
+            <motion.div
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 sm:gap-4 lg:gap-5"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+            >
+                {skillCategories.map((category) => (
+                    <motion.div
+                        key={category.title}
+                        className="glass-card rounded-xl p-4 border border-slate-800 hover:border-cyan-500/40 hover:bg-slate-900/80 transition-all duration-300 group text-left"
+                        variants={categoryVariants as any}
+                    >
+                        {/* Category Header */}
+                        <div className="flex items-center gap-2.5 mb-3 pb-2 border-b border-slate-800/80">
+                            <div className="p-1.5 rounded-lg bg-slate-900 border border-slate-800 group-hover:border-cyan-500/40 transition-colors">
+                                {category.icon}
+                            </div>
+                            <h3 className="text-xs sm:text-sm font-bold font-poppins text-slate-100 group-hover:text-cyan-400 transition-colors">
+                                {category.title}
+                            </h3>
+                        </div>
+
+                        {/* Skills List Badges */}
+                        <div className="flex flex-wrap gap-1.5">
+                            {category.skills.map((skill) => (
+                                <div
+                                    key={skill.name}
+                                    className="px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md bg-slate-900/90 border border-slate-800 text-slate-200 text-[11px] font-mono flex items-center gap-1.5 hover:border-emerald-500/50 hover:bg-slate-800/90 transition-all"
+                                >
+                                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                                    <span className="font-semibold text-slate-100">{skill.name}</span>
+                                </div>
+                            ))}
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.div>
+
+            {/* Continuous Learning Card */}
+            <motion.div
+                className="mt-5 sm:mt-6 text-center"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+            >
+                <div className="glass-card rounded-xl p-3.5 sm:p-4 border border-cyan-500/20 bg-gradient-to-r from-cyan-950/20 via-slate-900/60 to-emerald-950/20 max-w-3xl mx-auto">
+                    <h3 className="text-xs sm:text-sm font-mono font-bold text-cyan-400 mb-1 flex items-center justify-center gap-2">
+                        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
+                        {t('skills.continuousLearning.title')}
+                    </h3>
+                    <p className="text-slate-300 text-[11px] sm:text-xs font-roboto leading-relaxed max-w-2xl mx-auto">
+                        {t('skills.continuousLearning.description')}
                     </p>
-                </motion.div>
-
-                {/* Skills Grid */}
-                <motion.div
-                    className="grid grid-cols-1 lg:grid-cols-2 gap-8"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                >
-                    {skillCategories.map((category) => (
-                        <motion.div
-                            key={category.title}
-                            className="bg-white/80 backdrop-blur-xl rounded-2xl p-8 border border-[#93BFC7]/30 hover:border-[#93BFC7]/50 hover:shadow-lg transition-all duration-300 group"
-                            variants={categoryVariants as any}
-                            whileHover={{ scale: 1.02, y: -5 }}
-                        >
-                            {/* Category Header */}
-                            <div className="flex items-center mb-8">
-                                <span className="text-3xl mr-4">{category.icon}</span>
-                                <h3 className="text-2xl font-bold text-[#1A1A1A] font-roboto group-hover:text-[#93BFC7] transition-colors duration-300">
-                                    {category.title}
-                                </h3>
-                            </div>
-
-                            {/* Skills List */}
-                            <div className="space-y-4">
-                                {category.skills.map((skill, skillIndex) => (
-                                    <motion.div
-                                        key={skill.name}
-                                        className="skill-item"
-                                        variants={skillVariants as any}
-                                        custom={skillIndex}
-                                    >
-                                        <div className="flex items-center">
-                                            <div className="w-4 h-4 bg-[#93BFC7] rounded-full mr-3 shadow-sm shadow-[#93BFC7]/50"></div>
-                                            <span className="text-[#1A1A1A] font-medium font-roboto text-lg">
-                                                {skill.name}
-                                            </span>
-                                        </div>
-                                    </motion.div>
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
-
-                {/* Additional Info */}
-                <motion.div
-                    className="mt-16 text-center"
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                    <div className="bg-[#93BFC7]/10 rounded-2xl p-8 border border-[#93BFC7]/30">
-                        <h3 className="text-2xl font-bold text-[#1A1A1A] mb-4 font-roboto">
-                            {t('skills.continuousLearning.title')}
-                        </h3>
-                        <p className="text-[#4A4A4A] font-roboto leading-relaxed max-w-2xl mx-auto">
-                            {t('skills.continuousLearning.description')}
-                        </p>
-                    </div>
-                </motion.div>
-            </div>
-        </section>
+                </div>
+            </motion.div>
+        </div>
     );
 };
 
 export default Skill;
+
