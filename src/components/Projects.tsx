@@ -1,4 +1,4 @@
-import { ExternalLink, Github, Server, Code, Terminal } from "lucide-react";
+import { ExternalLink, Github, Server} from "lucide-react";
 import { motion } from "motion/react";
 import { useTranslation } from 'react-i18next';
 import Booking from '../assets/bookingapp.jpg';
@@ -148,4 +148,4 @@ const ProjectsSection = () => {
   );
 };
 
-export default ProjectsSection;
+export default ProjectsSection;

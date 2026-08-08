@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion } from 'motion/react';
 import AboutSection from "./components/About";
 import AnimatedBackground from "./components/AnimatedBackground";
 import ContactSection from "./components/Contact";
@@ -164,4 +164,4 @@ const Portfolio = () => {
   );
 };
 
-export default Portfolio;
+export default Portfolio;

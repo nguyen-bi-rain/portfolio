@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { useTranslation } from 'react-i18next';
-import { ShieldCheck, GraduationCap, Code, Layers } from "lucide-react";
+import {  GraduationCap, Code, Layers } from "lucide-react";
 import Profile from '../assets/profile.webp';
 
 const AboutSection = () => {
@@ -104,4 +104,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default AboutSection;

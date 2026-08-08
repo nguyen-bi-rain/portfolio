@@ -90,7 +90,7 @@ const Skill = () => {
             y: 0,
             transition: {
                 duration: 0.5,
-                ease: [0.25, 0.46, 0.45, 0.94]
+                ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number]
             }
         }
     };
@@ -127,7 +127,7 @@ const Skill = () => {
                     <motion.div
                         key={category.title}
                         className="glass-card rounded-xl p-4 border border-slate-800 hover:border-cyan-500/40 hover:bg-slate-900/80 transition-all duration-300 group text-left"
-                        variants={categoryVariants as any}
+                        variants={categoryVariants}
                     >
                         {/* Category Header */}
                         <div className="flex items-center gap-2.5 mb-3 pb-2 border-b border-slate-800/80">
